@@ -31,7 +31,7 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id")Integer id){
         alunos.findById(id)
-                .map(produto -> {alunos.delete(produto);
+                .map(aluno -> {alunos.delete(aluno);
                     return Void.TYPE;
                 }).orElseThrow(()-> new ResponseStatusException (HttpStatus.NOT_FOUND, "Registro não encontrado"));
     }
@@ -40,8 +40,8 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable Integer id, @RequestBody @Valid Aluno aluno){
         alunos.findById(id)
-                .map(produtoExistente -> { // outra forma de fazer o if. igual ao do DELETE.
-                    aluno.setId(produtoExistente.getId());
+                .map(alunoExistente -> { // outra forma de fazer o if. igual ao do DELETE.
+                    aluno.setId(alunoExistente.getId());
                     alunos.save(aluno);
                     return aluno;
                 }).orElseThrow(()->new ResponseStatusException (HttpStatus.NOT_FOUND,"Registro não Encontrado"));
@@ -60,7 +60,7 @@ public class AlunoController {
     }
 
     @GetMapping(value = "{id}")
-    public Aluno getProdutoById(@PathVariable("id") Integer id){
+    public Aluno getAlunoById(@PathVariable("id") Integer id){
         return alunos.findById(id)
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Aluno Não Encontrado"));
     }
