@@ -1,0 +1,15 @@
+project\domain\enums\StatusPedido.class
+project\domain\repository\Turmas.class
+project\InicioApplication.class
+project\rest\controller\AlunoController.class
+project\rest\controller\PedidoController.class
+project\service\impl\pedidoServiceImpl.class
+project\rest\dto\PedidoDTO.class
+project\domain\entity\Pedido.class
+project\domain\entity\Aluno.class
+project\domain\enums\StatusAlunos.class
+project\rest\controller\TurmaController.class
+project\domain\entity\Turma.class
+project\service\pedidoService.class
+project\domain\repository\Pedidos.class
+project\domain\repository\Alunos.class
