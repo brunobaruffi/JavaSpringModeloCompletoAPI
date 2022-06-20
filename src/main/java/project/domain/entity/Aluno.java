@@ -10,6 +10,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="aluno")
@@ -38,5 +40,13 @@ public class Aluno {
 
     @Column(name="status")
     private StatusAlunos status;
+
+    @ManyToMany
+    @JoinTable(
+            name = "aluno_turma",
+            joinColumns = @JoinColumn(name = "aluno_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "turma_id", referencedColumnName = "id")
+    )
+    private List<Turma> turmas;
 
 }
