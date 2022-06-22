@@ -14,3 +14,8 @@ spring:
       hibernate:
         show_sql: false
         format_sql: false
+
+security:
+  jwt:
+    expiracao: 30
+    chave-assinatura: "YnJ1bm8gYmFydWZmaQ=="
