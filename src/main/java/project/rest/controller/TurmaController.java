@@ -1,5 +1,6 @@
 package project.rest.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
@@ -19,14 +20,22 @@ public class TurmaController {
 
     public TurmaController(Turmas turmas){this.turmas = turmas;}
 
-
+  @Operation(
+      method = "POST",
+      description = "Salva nova turma",
+      summary = "Salva nova turma",
+      tags = "/api/turma")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Turma save(@RequestBody @Valid Turma turma){
         return turmas.save(turma);
     }
 
-
+  @Operation(
+      method = "DELETE",
+      description = "Deleta turma",
+      summary = "Deleta turma",
+      tags = "/api/turma")
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id")Integer id){
@@ -36,6 +45,11 @@ public class TurmaController {
                 }).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Registro não encontrado"));
     }
 
+  @Operation(
+      method = "PUT",
+      description = "Atualiza dados da turma",
+      summary = "Atualiza dados da turma",
+      tags = "/api/turma")
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable Integer id, @RequestBody @Valid Turma turma){
@@ -47,6 +61,11 @@ public class TurmaController {
                 }).orElseThrow(()->new ResponseStatusException (HttpStatus.NOT_FOUND,"Registro não Encontrado"));
     }
 
+  @Operation(
+      method = "GET",
+      description = "Lista todas as turma",
+      summary = "Lista todas as turma",
+      tags = "/api/turma")
     @GetMapping
     public List<Turma> find(Turma filtro){
         ExampleMatcher macher = ExampleMatcher.
@@ -59,6 +78,11 @@ public class TurmaController {
         return turmas.findAll(exemple);
     }
 
+  @Operation(
+      method = "GET",
+      description = "Lista uma turma especifica",
+      summary = "Lista uma turma especifica",
+      tags = "/api/turma")
     @GetMapping(value = "{id}")
     public Turma getAlunosById(@PathVariable("id") Integer id){
         return turmas.findById(id)

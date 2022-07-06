@@ -1,5 +1,6 @@
 package project.rest.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,6 +24,11 @@ public class UsuarioController {
     private final PasswordEncoder passowordEnconder;
     private final jwtService jwtService;
 
+    @Operation(
+        method = "POST",
+        description = "Cadastramento de usuario",
+        summary = "Cadastramento de usuario",
+        tags = "/api/usuario")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario salvar(@RequestBody @Valid Usuario usuario){
@@ -30,6 +36,11 @@ public class UsuarioController {
         usuario.setSenha(senhacriptografada);//criptografa e seta a senha no lugar dela devolta
         return usuarioService.salvar(usuario); // faz o desvio para o service salvar
     }
+    @Operation(
+        method = "POST",
+        description = "Autenticação do usuario",
+        summary = "Autenticação do usuario e geração do Bearer",
+        tags = "/api/usuario")
     @PostMapping("/auth")
     public TokenDTO autenticar(@RequestBody CredenciaisDTO credenciais){
         try {

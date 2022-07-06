@@ -1,9 +1,12 @@
+project\domain\config\SwaggerConfig.class
+project\rest\dto\TokenDTO.class
 project\domain\repository\Turmas.class
 project\InicioApplication.class
 project\domain\entity\Usuario$UsuarioBuilder.class
 project\rest\controller\PedidoController.class
 project\rest\dto\CredenciaisDTO.class
 project\domain\security\jwt\JwtAuthFilter.class
+project\service\usuarioService.class
 project\rest\dto\PedidoDTO.class
 project\domain\enums\StatusAlunos.class
 project\service\turmaAlunoService.class
@@ -16,6 +19,7 @@ project\domain\repository\Usuarios.class
 project\domain\security\jwt\jwtService.class
 project\service\impl\turmaServiceImpl.class
 project\service\impl\pedidoServiceImpl.class
+project\service\impl\usuarioServiceImpl.class
 project\domain\entity\Pedido.class
 project\domain\entity\Aluno.class
 project\rest\controller\TurmaController.class

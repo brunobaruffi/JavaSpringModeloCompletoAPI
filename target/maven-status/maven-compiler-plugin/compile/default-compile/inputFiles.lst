@@ -1,5 +1,6 @@
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\service\impl\pedidoServiceImpl.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\domain\security\jwt\JwtAuthFilter.java
+C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\service\usuarioService.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\InicioApplication.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\domain\entity\Pedido.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\domain\repository\Turmas.java
@@ -17,10 +18,13 @@ C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\domain\security\jwt\jwtService.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\domain\repository\Alunos.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\domain\entity\Turma.java
+C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\rest\dto\TokenDTO.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\domain\enums\StatusAlunos.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\service\pedidoService.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\rest\controller\AlunoController.java
+C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\service\impl\usuarioServiceImpl.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\rest\controller\TurmaController.java
+C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\domain\config\SwaggerConfig.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\rest\dto\TurmaAlunoDTO.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\rest\controller\PedidoController.java
 C:\Users\2160010032\Documents\AppsVia\projetoIndependente\src\main\java\project\service\turmaAlunoService.java
