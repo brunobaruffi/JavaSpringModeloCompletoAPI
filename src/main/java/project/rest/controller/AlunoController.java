@@ -86,7 +86,11 @@ public class AlunoController {
       tags = "/api/aluno")
     @GetMapping(value = "{id}")
     public Aluno getAlunoById(@PathVariable("id") Integer id){
+
         return alunos.findById(id)
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Aluno Não Encontrado"));
+//    return ResponseEntity.status(HttpStatus.CREATED)
+//        .body(alunos.findById(id)
+//            .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Aluno Não Encontrado")));
     }
 }
