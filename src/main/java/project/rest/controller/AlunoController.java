@@ -28,7 +28,7 @@ public class AlunoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Aluno save(@RequestBody @Valid Aluno aluno){
-        System.out.println(aluno.getDataNas());
+        //System.out.println(aluno.getDataNas());
         return alunos.save(aluno);
     }
 
