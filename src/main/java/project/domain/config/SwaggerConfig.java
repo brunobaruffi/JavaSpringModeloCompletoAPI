@@ -5,6 +5,7 @@ import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
     @Bean
     public OpenAPI springOpenAPI() {
-        String authName = "bearerAuth";
+        String authName = "Authorization";
         return new OpenAPI()
                 .info(new Info().title("TesteCompleto API")
                         .description("Aplicação completa de tests")
@@ -22,6 +23,8 @@ public class SwaggerConfig {
                 .externalDocs(new ExternalDocumentation()
                         .description("Qualquer Coisa Wiki Documentation")
                         .url("https://qualquercoisa.wiki.github.org/docs"))
+                .addSecurityItem(new SecurityRequirement()
+                        .addList(authName))
                 .components(
                         new Components()
                                 .addSecuritySchemes(authName,
