@@ -3,19 +3,19 @@ server:
 
 spring:
   datasource:
-#    url: "jdbc:h2:mem:testdb"
-#    driverClassName: "org.h2.Driver"
-#    username: "sa"
-#    password: "password"
+    url: "jdbc:h2:mem:testdb"
+    driverClassName: "org.h2.Driver"
+    username: "sa"
+    password: "password"
 
-    url: "jdbc:mysql://localhost:3306/independente?useTimezone=true&serverTimezone=UTC"
-    driverClassName: "com.mysql.cj.jdbc.Driver"
-    username: "root"
+#    url: "jdbc:mysql://localhost:3306/independente?useTimezone=true&serverTimezone=UTC"
+#    driverClassName: "com.mysql.cj.jdbc.Driver"
+#    username: "root"
 
 
   jpa:
-    #database-plataform: "org.hibernate.dialect.H2Dialect"
-    database-plataform: "org.hibernate.dialect.MySQLDialect"
+    database-plataform: "org.hibernate.dialect.H2Dialect"
+    #database-plataform: "org.hibernate.dialect.MySQLDialect"
     properties:
       hibernate:
         show_sql: true
