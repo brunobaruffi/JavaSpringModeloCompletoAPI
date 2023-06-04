@@ -8,4 +8,8 @@ public interface usuarioService extends UserDetailsService {
 
     Usuario salvar(Usuario usuario);
     UserDetails autenticar(Usuario usuario);
+
+    void teste();
+
+    void testeMongo();
 }

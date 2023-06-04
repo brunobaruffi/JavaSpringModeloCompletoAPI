@@ -9,10 +9,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import project.domain.entity.Usuario;
+import project.domain.security.jwt.jwtService;
 import project.rest.dto.CredenciaisDTO;
 import project.rest.dto.TokenDTO;
-import project.service.*;
-import project.domain.security.jwt.jwtService;
+import project.service.usuarioService;
 
 import javax.validation.Valid;
 
@@ -37,10 +37,10 @@ public class UsuarioController {
         return usuarioService.salvar(usuario); // faz o desvio para o service salvar
     }
     @Operation(
-        method = "POST",
-        description = "Autenticação do usuario",
-        summary = "Autenticação do usuario e geração do Bearer",
-        tags = "/api/usuario")
+            method = "POST",
+            description = "Autenticação do usuario",
+            summary = "Autenticação do usuario e geração do Bearer",
+            tags = "/api/usuario")
     @PostMapping("/auth")
     public TokenDTO autenticar(@RequestBody CredenciaisDTO credenciais){
         try {
@@ -54,6 +54,40 @@ public class UsuarioController {
             String token = jwtService.gerarToken(usuario);
             return new TokenDTO(usuario.getLogin(),token);
         }catch (UsernameNotFoundException e){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Senha Invalida");
+        }
+    }
+
+
+    @Operation(
+            method = "POST",
+            description = "Autenticação do usuario",
+            summary = "Autenticação do usuario e geração do Bearer",
+            tags = "/api/usuario")
+    @PostMapping("/teste")
+    public String test(){
+        try {
+
+            usuarioService.teste();
+            return "XXXX";
+        }catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Senha Invalida");
+        }
+    }
+
+
+    @Operation(
+            method = "POST",
+            description = "Autenticação do usuario",
+            summary = "Autenticação do usuario e geração do Bearer",
+            tags = "/api/usuario")
+    @PostMapping("/testemongo")
+    public String testmongo(){
+        try {
+
+            usuarioService.testeMongo();
+            return "XXXX";
+        }catch (Exception e){
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Senha Invalida");
         }
     }

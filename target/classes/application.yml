@@ -2,15 +2,21 @@ server:
   port: 8080
 
 spring:
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    mongodb:
+      database: dataTest
+      uri: mongodb://root:example@localhost:27017/
   datasource:
-#    url: "jdbc:h2:mem:testdb"
-#    driverClassName: "org.h2.Driver"
-#    username: "sa"
-#    password: "password"
+    url: "jdbc:h2:mem:testdb"
+    driverClassName: "org.h2.Driver"
+    username: "sa"
+    password: "password"
 
-    url: "jdbc:mysql://localhost:3306/independente?useTimezone=true&serverTimezone=UTC"
-    driverClassName: "com.mysql.cj.jdbc.Driver"
-    username: "root"
+#    url: "jdbc:mysql://localhost:3306/independente?useTimezone=true&serverTimezone=UTC"
+#    driverClassName: "com.mysql.cj.jdbc.Driver"
+#    username: "root"
 
 
   jpa:
@@ -21,7 +27,33 @@ spring:
         show_sql: true
         format_sql: true
 
+  kafka:
+    config:
+      enable-auto-commit: true
+      auto-commit-interval-ms: 1000
+      concurrency-consumers: 1
+      max-poll-records-config: 10
+      fetch-max-wait-ms-config: 5
+      max-poll-interval-ms-config: 1800000
+      fetch-max-bytes-config: 524288
+      max-partition-fetch-bytes: 524288
+    producer:
+      retries: 20
+      bootstrap-servers: localhost:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      heartbeat-interval: 1000
+      bootstrap-servers: localhost:29092
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+    listener:
+      poll-timeout: 30000
+
 security:
   jwt:
     expiracao: 30
     chave-assinatura: "YnJ1bm8gYmFydWZmaQ=="
+
