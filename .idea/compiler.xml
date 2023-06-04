@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="projetoIndependente" />
+        <module name="JavaSpringModeloCompleto2022" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="JavaSpringModeloCompleto2022" options="-parameters" />
       <module name="projetoIndependente" options="-parameters" />
     </option>
   </component>
