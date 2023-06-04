@@ -1,0 +1,8 @@
+FROM openjdk:11-jdk
+WORKDIR /app
+COPY projetoIndependente-1.0-SNAPSHOT.jar /app/app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+#sudo docker build -t java-api .
+#sudo docker run --rm --name execjava -p "8080:8080" java-api

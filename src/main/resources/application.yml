@@ -20,8 +20,8 @@ spring:
 
 
   jpa:
-    #database-plataform: "org.hibernate.dialect.H2Dialect"
-    database-plataform: "org.hibernate.dialect.MySQLDialect"
+    database-plataform: "org.hibernate.dialect.H2Dialect"
+    #database-plataform: "org.hibernate.dialect.MySQLDialect"
     properties:
       hibernate:
         show_sql: true
